@@ -1,0 +1,141 @@
+/* Footer Styling */
+.footer {
+    
+    background-color: #000000; /* Dark background for a modern, professional feel */
+    color: #fff;
+    padding: 40px 20px;
+    font-family: 'Nunito', sans-serif;
+  
+    /* Footer Content Section */
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+  
+    /* Company Information */
+    .footer-info {
+      flex: 2;
+      max-width: 350px;
+    }
+  
+    /* Footer Title Styling */
+.footer-title {
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+    font-weight: 600; /* Slightly bolder for better visibility */
+    font-size: 24px; /* Larger size for prominence */
+    color: #32afb8; /* Accent color */
+    margin-bottom: 12px; /* Space below the title */
+    text-transform: uppercase; /* Adds a touch of elegance */
+  }
+  
+  
+  .footer-description {
+    white-space: nowrap; /* Prevent text from wrapping to a new line */
+    overflow: visible; /* Allow text to overflow */
+    text-overflow: unset; /* Disable truncation */
+    max-width: 100%; /* Ensure the description takes up the full available width */
+    display: inline-block; /* Ensure it's in a single line */
+  }
+  
+  
+  
+    .footer-address {
+      font-size: 14px;
+      color: #bbb; /* Slightly lighter text for address */
+    }
+  
+    /* Social Media Links */
+    .footer-social {
+      flex: 1;
+      max-width: 300px;
+      padding-left: 60px;
+    }
+  
+    .footer-social .footer-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #32afb8; /* Consistent accent color */
+      text-align: start;
+    }
+  
+    .social-icons {
+      list-style: none;
+      padding: 0;
+  
+      li {
+        margin: 10px 0;
+      }
+  
+      .social-icon {
+        color: #aaa; /* Default social media icon color */
+        font-size: 18px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        transition: color 0.3s ease-in-out;
+  
+        &:hover {
+          color: #ff0000; /* Hover effect with accent color */
+        }
+  
+        i {
+          margin-right: 8px; /* Space between icon and text */
+        }
+      }
+    }
+  
+    /* Made In India Logo */
+    .footer-logo {
+      flex: 1;
+      max-width: 250px;
+      text-align: center;
+      padding-right: 60px;
+    }
+  
+    .footer-logo img {
+      width: 180px; /* Logo width */
+      margin-bottom: 10px;
+    }
+  
+    .footer-logo-text {
+      font-size: 18px;
+      color: #aaa;
+      font-weight: 300; /* Light font for the tagline */
+    }
+  
+    /* Footer Bottom */
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 14px;
+      color: #888;
+      border-top: 1px solid #333;
+      margin-top: 20px;
+    }
+  
+    /* Responsive Design for Mobile Devices */
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+  
+      .footer-info, .footer-social, .footer-logo {
+        max-width: 100%;
+        flex: 1;
+      }
+  
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+    }
+  }
+  

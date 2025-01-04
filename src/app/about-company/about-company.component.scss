@@ -1,0 +1,72 @@
+/* About Company Section */
+.about-company {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    color: #000000;
+  }
+  
+  .about-company h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #1d0252;
+  }
+  
+  .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .company-info,
+  .company-vision {
+    flex: 1;
+    min-width: 300px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .company-info p,
+  .company-vision p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  
+  .highlights {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+  }
+  
+  .highlights li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  .highlights strong {
+    color: #1a1a1a;
+  }
+  
+  .company-vision h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #1a73e8;
+  }
+  
+  .company-vision p {
+    font-size: 1rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+    }
+  }
+  

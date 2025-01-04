@@ -1,0 +1,42 @@
+<section class="track-circle">
+    <div class="container">
+      <h2>Track Your Circle</h2>
+      <div class="track-box">
+        <div class="input-section">
+          <label for="badgeId">Enter Your Badge Unique ID:</label>
+          <input
+            type="text"
+            id="badgeId"
+            [(ngModel)]="badgeId"
+            placeholder="Enter Unique ID"
+          />
+          <button (click)="onFindBadge()">Find</button>
+        </div>
+        <div class="result-section" *ngIf="circleFillPercentage > 0">
+          <div class="badge-display">
+            <h3>Your Badge</h3>
+            <div class="badge-image">
+              <img src="assets/img/width_200.webp" alt="Badge Image" />
+              <div class="badge-id-display">{{ badgeId }}</div>
+            </div>
+          </div>
+          <div class="circle-progress">
+            <h3>Circle Status</h3>
+            <div
+              class="circle"
+              [style.background]="
+                'conic-gradient(#1a73e8 ' +
+                circleFillPercentage +
+                '%, #e0e0e0 ' +
+                circleFillPercentage +
+                '%)'
+              "
+            >
+              <span>{{ circleFillPercentage }}%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
