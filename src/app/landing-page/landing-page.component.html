@@ -1,0 +1,59 @@
+<section class="digital-badge-section">
+  <div class="badge-container">
+    <img src="assets/img/width_200.webp" alt="Digital Badge" class="badge-image">
+    <button class="buy-now-button" (click)="openPopup()">Buy Now</button>
+
+    <!-- Popup Overlay -->
+    <div class="popup-overlay" *ngIf="showPopup" (click)="closePopup()">
+      <div class="popup-content" (click)="$event.stopPropagation()">
+        <div class="popup-header">
+          <span>Buy Your Badge</span>
+          <button class="popup-close" (click)="closePopup()">X</button>
+        </div>
+        <form (ngSubmit)="onBuyNow()" #buyForm="ngForm">
+          <div class="form-group">
+            <input type="text" [(ngModel)]="user.name" name="name" placeholder="Full Name" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" [(ngModel)]="user.phone" name="phone" placeholder="Phone Number" required />
+          </div>
+          <div class="form-group">
+            <input type="email" [(ngModel)]="user.email" name="email" placeholder="Email (Optional)" />
+          </div>
+          <div class="form-group">
+            <input type="text" value="₹ 100" readonly disabled />
+          </div>
+          <button [disabled]="!buyForm.valid" type="submit">Pay Now</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Success Message -->
+    <div *ngIf="showSuccess" class="success-message">
+      <p>Thank you for buying! Your Badge ID: {{ badgeId }}. Keep it safe.</p>
+      <button (click)="redirectToTrack()">Track Your Circle</button>
+    </div>
+
+    <!-- Error Message -->
+    <div *ngIf="showError" class="error-message">
+      <p>Sorry, something went wrong. Please try again.</p>
+      <button (click)="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <div class="badge-info">
+    <h2>Benefits of Having this Badge</h2>
+    <ul>
+      <li>Get exclusive access to premium content.</li>
+      <li>Boost your professional credibility.</li>
+      <li>Earn recognition in your industry.</li>
+      <li>Join a community of like-minded individuals.</li>
+    </ul>
+    <p>
+      This badge represents your dedication and achievements. Purchasing it supports the development of additional features and resources.
+    </p>
+    <div class="badge-text">
+      <p>Price - </p> &#8377; 100 Only
+    </div>
+  </div>
+</section>

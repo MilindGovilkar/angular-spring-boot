@@ -1,0 +1,76 @@
+/* Global Reset */
+/* Prevent horizontal scrolling */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Ensure elements like images, containers, and footer don't overflow */
+img, .container, .footer, .navbar, .main-content {
+  max-width: 100%; /* Prevent overflow */
+  overflow: hidden; /* Hide overflow */
+}
+
+/* Ensure box-sizing is consistent */
+* {
+  box-sizing: border-box;
+}
+  
+  /* Main Content Wrapper */
+  .main-content {
+    min-height: 88vh; /* Ensures main content fills most of the viewport */
+    padding: 20px;
+    background-color: #f4f4f4; /* Light gray background for better contrast */
+    //display: flex;
+    //justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+  }
+  
+  /* Navbar Styling */
+  app-navbar {
+    display: block;
+    width: 100%;
+    background-color: #1a1a1a; /* Dark background for the navbar */
+    color: #ffffff; /* White text for better contrast */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Keeps navbar above other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  /* Footer Styling */
+  app-footer {
+    display: block;
+    width: 100%;
+    background-color: #1a1a1a; /* Dark background for footer */
+    color: #ffffff; /* White text color */
+    text-align: center;
+    padding: 0px; /* Increased padding for spacing */
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow at the top */
+    margin-top: 0; /* Ensure no additional margin on top */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .main-content {
+      padding: 15px;
+    }
+  
+    app-footer {
+      padding: 10px 15px;
+      font-size: 0.9rem; /* Reduces font size for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-content {
+      padding: 10px;
+    }
+  
+    app-footer {
+      font-size: 0.8rem; /* Further reduces font size for very small screens */
+    }
+  }
+  

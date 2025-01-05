@@ -1,0 +1,112 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  background-color: #1a1a1a; /* Dark theme */
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding-top: 0px; /* Increase the top padding */
+  padding-bottom: 0px; /* Increase the bottom padding */
+}
+
+.container {
+  max-width: 1400px; /* Width of the container */
+  margin: 0 auto;
+  padding: 10px 30px; /* Adjusted padding for horizontal spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* You can also increase the top/bottom padding here if needed */
+}
+
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.logo img{
+    max-width: 120px; /* Adjust to fit your design */
+    height: auto; /* Automatically adjust the height to maintain aspect ratio */
+    object-fit: contain; /* Ensures the logo maintains aspect ratio and doesn't stretch */
+    margin-right: 20px; /* Space between logo and the menu items */
+  
+}
+
+.logo:hover {
+  color: #f0a500;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 5px 10px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #1a1a1a;
+  background-color: #32afb8;
+  border-radius: 5px;
+}
+
+/* Hamburger Icon (Mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #1a1a1a;
+    width: 200px;
+    padding: 10px 0;
+    border-radius: 0 0 5px 5px;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show when active */
+  }
+
+  .hamburger {
+    display: flex; /* Show on mobile */
+  }
+}

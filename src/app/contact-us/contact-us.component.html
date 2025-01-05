@@ -1,0 +1,100 @@
+<div class="contact-container">
+  <h2>How Can We Assist You!</h2>
+
+  <!-- Contact Form -->
+  <div *ngIf="!formSubmitted && !showError" class="contact-form">
+    <form (ngSubmit)="onSubmit()" #contactForm="ngForm" novalidate>
+      <!-- Name Field -->
+      <div class="form-group">
+        <label for="name">Name <span class="required">*</span></label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          [(ngModel)]="contact.name"
+          class="form-control"
+          placeholder="Enter your name"
+        />
+        <div *ngIf="contactForm.submitted && !contact.name" class="error">
+          Name is required.
+        </div>
+      </div>
+
+      <!-- Phone Number Field -->
+      <div class="form-group">
+        <label for="phone">Phone Number <span class="required">*</span></label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          required
+          [(ngModel)]="contact.phone"
+          class="form-control"
+          placeholder="Enter your phone number"
+        />
+        <div *ngIf="contactForm.submitted && !contact.phone" class="error">
+          Phone number is required.
+        </div>
+      </div>
+
+      <!-- Email Field (Optional) -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="contact.email"
+          class="form-control"
+          placeholder="Enter your email (optional)"
+        />
+      </div>
+
+      <!-- Badge Unique ID Field (Optional) -->
+      <div class="form-group">
+        <label for="badgeId">Badge Unique ID</label>
+        <input
+          type="text"
+          id="badgeId"
+          name="badgeId"
+          [(ngModel)]="contact.badgeId"
+          class="form-control"
+          placeholder="Enter your badge ID (if applicable)"
+        />
+      </div>
+
+      <!-- Query Field -->
+      <div class="form-group">
+        <label for="query">Your Query</label>
+        <textarea
+          id="query"
+          name="query"
+          rows="5"
+          [(ngModel)]="contact.query"
+          class="form-control"
+          placeholder="Describe your query"
+        ></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-group">
+        <button type="submit" class="btn-submit" [disabled]="!contactForm.form.valid">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Success Message -->
+  <div *ngIf="formSubmitted" class="success-message">
+    <p>🎉 Thanks for connecting with us! We will get back to you shortly.</p>
+    <button class="btn-reset" (click)="goBack()">Back to Contact Us</button>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="showError" class="error-message">
+    <p>⚠️ Sorry, something went wrong. Please try again later.</p>
+    <button class="btn-reset" (click)="goBack()">Back to Contact Us</button>
+  </div>
+</div>
